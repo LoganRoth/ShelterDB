@@ -1,0 +1,2 @@
+insert into location VALUES("The Diner", "69 THICCBOI st.", "8002672001", "RESCUE_ORG");
+insert into drivers VALUES("jenny", "h3jd8fn4n38fk9", "123 456", "tommy's house")
