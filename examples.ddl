@@ -53,7 +53,7 @@ insert into accepted_animals VALUES("It's Raining Cats and Dogs", "CAT", 30);
 -- 11 Animals
 insert into animals VALUES(1234567890, "DOG", "Clergy SPCA", '2020-01-01');
 insert into animals VALUES(1111111111, "CAT", "Clergy SPCA", '2019-06-04');
-insert into animals VALUES(2222222222, "RODENT", "All Rats All Day", '2020-01-25';
+insert into animals VALUES(2222222222, "RODENT", "All Rats All Day", '2020-01-25');
 insert into animals VALUES(3333333333, "RABBIT", "Division SPCA", '2019-08-22');
 insert into animals VALUES(4444444444, "DOG", "Division SPCA", '2018-05-20');
 insert into animals VALUES(5555555555, "CAT", "It's Raining Cats and Dogs", '2020-01-22');
