@@ -5,15 +5,15 @@ insert into people VALUES("Jaromir Jagr", 9973024545, "2 Glenn St, Kingston, ON"
 insert into people VALUES("Bianca Andrescu", 2334048888, "90 Collingwood St, Kingston, ON");
 insert into people VALUES("Serena Williams", 9098086006, "400 Princess St, Kingston, ON");
 insert into people VALUES("Maya Moore", 3445556677, "222 Union St, Kingston, ON");
-insert into people VALUES("Robert Moore", 9998887777, "9 Couper St", "Kingston, ON");
-insert into people VALUES("Curtis Holloway", 8887776666, "9 Couper St", "Kingston, ON");
-insert into people VALUES("Brandon Moll", 7776665555, "9 Couper St", "Kingston, ON");
-insert into people VALUES("Chris Scalzitti", 6665554444, "9 Couper St", "Kingston, ON");
-insert into people VALUES("Anthony Scalzitti", 5554443333, "9 Couper St", "Kingston, ON");
-insert into people VALUES("Logan Roth", 4443332222, "9 Couper St", "Kingston, ON");
-insert into people VALUES("Matt Tigwell", 3332221111, "9 Couper St", "Kingston, ON");
-insert into people VALUES("Patrick Lyster", 2221110000, "9 Couper St", "Kingston, ON");
-insert into people VALUES("Connor Sparling", 1110009999, "9 Couper St", "Kingston, ON");
+insert into people VALUES("Robert Moore", 9998887777, "9 Couper St, Kingston, ON");
+insert into people VALUES("Curtis Holloway", 8887776666, "9 Couper St, Kingston, ON");
+insert into people VALUES("Brandon Moll", 7776665555, "9 Couper St,Kingston, ON");
+insert into people VALUES("Chris Scalzitti", 6665554444, "9 Couper St,Kingston, ON");
+insert into people VALUES("Anthony Scalzitti", 5554443333, "9 Couper St,Kingston, ON");
+insert into people VALUES("Logan Roth", 4443332222, "9 Couper St,Kingston, ON");
+insert into people VALUES("Matt Tigwell", 3332221111, "9 Couper St,Kingston, ON");
+insert into people VALUES("Patrick Lyster", 2221110000, "9 Couper St,Kingston, ON");
+insert into people VALUES("Connor Sparling", 1110009999, "9 Couper St,Kingston, ON");
 insert into people VALUES('Anonymous');
 insert into people VALUES("Adopterson", 6672367837, "67 Adoption St, Kingston, ON");
 
