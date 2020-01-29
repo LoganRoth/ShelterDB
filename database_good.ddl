@@ -1,7 +1,7 @@
-create table if not exists location(
+create table if not exists locations(
   name varchar(40) not null,
   address varchar(100) not null,
-  phone char(10) not null,
+  phone numeric(10,0) not null,
   type enum ('SPCA', 'SHELTER', 'RESCUE_ORG'),
   primary key(name)
 );
@@ -15,26 +15,42 @@ create table if not exists shelters(
   foreign key(owner) references people(name)
 );
 
+create table if not exists rescue_orgs(
+  name varchar(40) not null,
+  owner varchar(40) not null,
+  primary key(name),
+  foreign key(name) references location(name),
+  foreign key(owner) references people(name)
+);
+
+
+create table if not exists animal_types(
+  type varchar(40) not null,
+  primary key(type)
+);
+
 create table if not exists accepted_animals(
   shelter_name varchar(40) not null,
   type varchar(40) not null,
   max_accepted int not null,
   primary key(shelter_name, type),
-  foreign key(shelter_name) references location(name)
+  foreign key(shelter_name) references location(name),
+  foreign key(type) references animal_types(type)
 );
 
 create table if not exists animals(
-  uuid char(10) not null,
+  uuid numeric(10,0) not null,
   type varchar(40) not null,
   location varchar(40) not null,
   arrival_date date not null,
   primary key(uuid),
-  foreign key(location) references location(name)
+  foreign key(location) references location(name),
+  foreign key(type) references animal_types(type)
 );
 
 create table if not exists people(
   name varchar(40) not null,
-  phone char(10),
+  phone numeric(10,0),
   address varchar(100),
 --  type enum ("ADOPTER", "VET", "DRIVER", "EMPLOYEE", "DONOR"),
   primary key(name)
@@ -42,7 +58,7 @@ create table if not exists people(
 
 create table if not exists drivers(
   name varchar(40) not null,
-  licence_num char(15) not null,
+  licence_num numeric(15,0) not null,
   licence_plate varchar(8) not null,
   workplace varchar(40) not null,
   primary key(name),
@@ -62,7 +78,7 @@ create table if not exists employees(
 
 create table if not exists vet_visits(
   vet varchar(40) not null,
-  animal char(10) not null,
+  animal numeric(10,0) not null,
   visit_date date not null,
   weight numeric(4,2),
   reason varchar(200),
@@ -82,7 +98,7 @@ create table if not exists donations(
 );
 
 create table if not exists adoptions(
-  animal_id varchar(40) not null,
+  animal_id numeric(10,0) not null,
   adopter_name varchar(40) not null,
   amount numeric(5,2) not null,
   adopt_date date not null,
@@ -92,7 +108,7 @@ create table if not exists adoptions(
 );
 
 create table if not exists transfers(
-  animal_id varchar(40) not null,
+  animal_id numeric(10,0) not null,
   driver varchar(40),
   amount_paid numeric(5,2) not null,
   transfer_date date not null,
