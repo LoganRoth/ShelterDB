@@ -14,7 +14,7 @@ insert into people VALUES("Logan Roth", 4443332222, "9 Couper St,Kingston, ON");
 insert into people VALUES("Matt Tigwell", 3332221111, "9 Couper St,Kingston, ON");
 insert into people VALUES("Patrick Lyster", 2221110000, "9 Couper St,Kingston, ON");
 insert into people VALUES("Connor Sparling", 1110009999, "9 Couper St,Kingston, ON");
-insert into people VALUES('Anonymous');
+insert into people VALUES("Anonymous", NULL, NULL);
 insert into people VALUES("Adopterson", 6672367837, "67 Adoption St, Kingston, ON");
 
 -- 9 Locations
