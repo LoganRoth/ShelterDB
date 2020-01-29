@@ -11,7 +11,7 @@ create table if not exists shelters(
   website varchar(100) not null,
   owner varchar(40) not null,
   primary key(name),
-  foreign key(name) references location(name),
+  foreign key(name) references locations(name),
   foreign key(owner) references people(name)
 );
 
@@ -19,7 +19,7 @@ create table if not exists rescue_orgs(
   name varchar(40) not null,
   owner varchar(40) not null,
   primary key(name),
-  foreign key(name) references location(name),
+  foreign key(name) references locations(name),
   foreign key(owner) references people(name)
 );
 
@@ -34,7 +34,7 @@ create table if not exists accepted_animals(
   type varchar(40) not null,
   max_accepted int not null,
   primary key(shelter_name, type),
-  foreign key(shelter_name) references location(name),
+  foreign key(shelter_name) references locations(name),
   foreign key(type) references animal_types(type)
 );
 
@@ -44,7 +44,7 @@ create table if not exists animals(
   location varchar(40) not null,
   arrival_date date not null,
   primary key(uuid),
-  foreign key(location) references location(name),
+  foreign key(location) references locations(name),
   foreign key(type) references animal_types(type)
 );
 
@@ -63,7 +63,7 @@ create table if not exists drivers(
   workplace varchar(40) not null,
   primary key(name),
   foreign key(name) references people(name),
-  foreign key(workplace) references location(name)
+  foreign key(workplace) references locations(name)
   on delete cascade
   on update cascade
 );
@@ -73,7 +73,7 @@ create table if not exists employees(
   workplace varchar(40) not null,
   primary key(name),
   foreign key(name) references people(name),
-  foreign key(workplace) references location(name)
+  foreign key(workplace) references locations(name)
 );
 
 create table if not exists vet_visits(
@@ -94,7 +94,7 @@ create table if not exists donations(
   date_transaction date,
   primary key(donor, recipient, date_transaction),
   foreign key(donor) references people(name),
-  foreign key(recipient) references location(name)
+  foreign key(recipient) references locations(name)
 );
 
 create table if not exists adoptions(
@@ -117,6 +117,6 @@ create table if not exists transfers(
   primary key(animal_id, transfer_date),
   foreign key(animal_id) references animals(uuid),
   foreign key(driver) references people(name),
-  foreign key(spca) references location(name),
-  foreign key(destination) references location(name)
+  foreign key(spca) references locations(name),
+  foreign key(destination) references locations(name)
 );
