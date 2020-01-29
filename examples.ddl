@@ -84,7 +84,7 @@ insert into vet_visits VALUES("Robert Moore", 1234567890, '2019-10-10', 700.00, 
 -- 3 Donations
 insert into donations VALUES("Logan Roth", "Save The Doggies", 20.00, '2018-11-28');
 insert into donations VALUES("Logan Roth", "Save The Doggies", 1000.00, '2019-11-28');
-insert into donations VALUES("Logan Roth", "It's Raining Cats and Dogs", 100.00, '2020-01-15');
+insert into donations VALUES("Anonymous", "It's Raining Cats and Dogs", 100.00, '2020-01-15');
 
 -- 3 Adoptions
 insert into adoptions VALUES(4444444444, "Adopterson", 50.00, '2020-01-01');
