@@ -1,0 +1,65 @@
+table {
+  border: 1px solid black;
+  width: 75%;
+  border-collapse: collapse;
+}
+p {color: blue;}
+th, td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: center;
+  border: 1px solid black;
+
+}
+
+h1 {text-align: center;}
+
+.blocks {
+  background-color: rgb(266, 159, 59);
+  color: black;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.block:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.divider{
+    height:auto;
+    width:auto;
+    display:inline-block;
+}
+
+.homebutton {
+  display: block;
+  width: 25%;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.homebutton:hover {
+  background-color: #ddd;
+  color: black;
+}
