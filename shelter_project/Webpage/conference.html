@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="conference.css" type="text/css" rel="stylesheet" >
+</head>
+<body>
+  <h1>Super Awesome Conference</h1>
+  <p> Wow, very cool.</p>
+  <div class="blocks">
+  <h2>Subcomittee Information</h2>
+    <form action="subcomitee.php" method="post">
+      <select name="subcomitee_name">
+        <option value = "Dance Team">Dance Team</option>
+        <option value = "Power Squad">Power Squad</option>
+      </select>
+      <br><br>
+      <input type="submit">
+    </form>
+  </div>
+  <div class="blocks">
+  <h2>Housing Information</h2>
+    <form action="hotel.php" method="post">
+      <p>Room Number:</p>
+      <input type="text" name="room"><br><br>
+      <input type="submit">
+    </form>
+  </div>
+  <div class ="blocks">
+  <h2>Schedule Information</h2>
+    <form action="schedule.php" method="post">
+      <select name="day">
+        <option value = "1">Day 1</option>
+        <option value = "2">Day 2</option>
+      </select>
+      <br><br>
+      <input type="submit" name="request_type" value="Display">
+    </form>
+  </div>
+  <div class="blocks">
+  <h2>Change Session Information</h2>
+    <form action="schedule.php" method="post">
+      <p>Speaker Name</p>
+      <input type="text" name="speaker_name"><br><br>
+      <select name="day">
+        <option value = "1">Day 1</option>
+        <option value = "2">Day 2</option>
+      </select><br>
+      <p>Start Time</p>
+      <input type="time" name="start">
+      <p>End Time</p>
+      <input type="time" name="end">
+      <p>Location</p>
+      <input type="text" name="location">
+      <input type="submit" name="request_type" value="Change">
+    </form>
+  </div>
+  <div class="blocks">
+  <h2>Sponsorship Information</h2>
+  <form action="sponsorship.php" method="get">
+    <input type="submit" value="Display Sponsors"/>
+  </form>
+  <h3>Add A Sponsoring Company<h3>
+    <form action="sponsor_update.php" method="post">
+      <p>Company Name</p>
+      <input type="text" name="company_name"><br>
+      <select name="sponsorship_rank">
+        <option value = "Platinum">Platinum</option>
+        <option value = "Gold">Gold</option>
+        <option value = "Silver">Silver</option>
+        <option value = "Bronze">Bronze</option>
+      </select><br>
+      <p>Emails Sent</p>
+      <input type="text" name="emails"><br>
+      <input type="submit" value="Add Company" name="request_type">
+    </form>
+  <h3>Remove a Sponsor and respective attendees</h3>
+  <form action="sponsor_update.php" method="post">
+    <p>Company Name</p>
+    <input type="text" name="company_name"><br>
+    <input type="submit" value="Remove Company" name="request_type">
+  </form>
+  </div>
+  <div class="blocks">
+  <h2>Job Postings</h2>
+  <form action="jobposting.php" method="post">
+    <p>Commpany Name:</p>
+    <input type="text" name="company_name"><br><br>
+    <input type="submit">
+  </form>
+  </div>
+  <div class="blocks">
+  <h2>Attendee Information</h2>
+  <form action="attendee.php" method="get">
+    <input type="submit" value="Display Attendees"/>
+  </form>
+  <h3>Add and attendee</h3>
+  <form action="add_attendee.php" method="post">
+    <p>Attendee Name</p>
+    <input type="text" name="name"><br><br>
+    <p>Attendee ID</p>
+    <input type="text" name="id"><br><br>
+    <select name="type">
+      <option value = "student">Student</option>
+      <option value = "professional">Professional</option>
+      <option value = "sponsor">Sponsor</option>
+    </select>
+    <br><br>
+    <input type="submit">
+  </form>
+  </div>
+  <div class="blocks">
+  <h2> Money Breakdown </h2>
+  <form action="breakdown.php" method="get">
+    <input type="submit" value="Conference Intake"/>
+  </form>
+  </div>
+
+</body>
+</html>
