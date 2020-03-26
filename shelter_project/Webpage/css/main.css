@@ -39,7 +39,9 @@
 body, html {
 	height: 100%;
 	font-family: Montserrat-Regular, sans-serif;
+
 }
+
 
 /*---------------------------------------------*/
 a {
@@ -368,6 +370,11 @@ textarea.input1 + .shadow-input1 {
   }
 }
 
+.divider{
+    height:auto;
+    width:auto;
+    display:inline-block;
+}
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/
@@ -435,3 +442,4 @@ textarea.input1 + .shadow-input1 {
     opacity: 1;
   }
 }
+

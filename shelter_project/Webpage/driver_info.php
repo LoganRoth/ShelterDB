@@ -23,48 +23,50 @@
 <body>
   <div class="contact1">
     <div class="container-contact1">
-      <h1>Best Animal Shelter Ever</h1>
+      <h1>Select Driver</h1>
       <div class="blocks">
-      <form action="browse_animals.php" method="get">
-        <div class="container-contact1-form-btn">
-          <button class="contact1-form-btn">
-            <span>
-              Browse All Animals
-            </span>
-          </button>
-        </div>
-      </form>
-      <div class="divider"></div>
-      <form action="donor_info.php" method="get">
-        <div class="container-contact1-form-btn">
-          <button class="contact1-form-btn">
-            <span>
-              View Donor Info
-            </span>
-          </button>
-        </div>
-      </form>
-      <div class="divider"></div>
-      <form action="donations_year.php" method="get">
-        <div class="container-contact1-form-btn">
-          <button class="contact1-form-btn">
-            <span>
-              View Donations Info
-            </span>
-          </button>
-        </div>
-      </form>
-      <div class="divider"></div>
-      <form action="driver_info.php" method="get">
-        <div class="container-contact1-form-btn">
-          <button class="contact1-form-btn">
-            <span>
-              View Driver Info
-            </span>
-          </button>
-        </div>
+      <form action="driver_info.php" method="post">
+        <label for="rescue_org">Choose a Rescue Org:</label>
+        <select id="rescue_org" name="rescue_org">
+        <?php
+        $pdo = new PDO('mysql:host=localhost;dbname=thicccgirl', "root", "");
+        $sql = "select name from locations where type = 'RESCUE_ORG'";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        if (!empty($_POST["spca_name"])) {
+          echo "<option value = '".$_POST["rescue_org"]."'>".$_POST["rescue_org"]."</option>";
+        }
+        while ($val = $stmt->fetch()) {
+          if ($val["name"] != $_POST["rescue_org"]){
+            echo "<option value = '".$val["name"]."'>".$val["name"]."</option>";
+          }
+        }
+        ?>
+        </select><br>
+        <input type='submit'>
       </form>
       </div>
+      <?php
+        if (!empty($_POST["rescue_org"])) {
+          $pdo = new PDO('mysql:host=localhost;dbname=thicccgirl', "root", "");
+          echo "<table><tr><th>Name</th><th>Phone</th><th>Address</th><th>Licence Number</th><th>Licence Plate</th></tr>";
+          $sql = "select people.name, phone, address, licence_num, licence_plate from drivers left outer join people on people.name = drivers.name WHERE workplace = ?";
+          $stmt = $pdo->prepare($sql);
+          $stmt->execute([$_POST["rescue_org"]]);
+          while ($row = $stmt->fetch()) {
+            echo "<tr><td>".$row["name"]."</td><td>".$row["phone"]."</td><td>".$row["address"]."</td><td>".$row["licence_num"]."</td><td>".$row["licence_plate"]."</td></tr>";
+          }
+        }
+        ?>
+      <br></br>
+      <br></br>
+      <form action="shelter.html" method="get">
+        <button class="contact1-form-btn">
+            <span>
+              Home
+            </span>
+          </button>
+      </form>
     </div>
   </div>
 </body>
