@@ -49,12 +49,12 @@
       <?php
         if (!empty($_POST["donor_name"])) {
           $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
-          echo "<table><tr><th>Donor</th><th>Recipient</th><th>Total Donation</th></tr>";
+          echo "<table><tr><th style='padding:0 15px 0 15px;'>Donor</th><th style='padding:0 15px 0 15px;'>Recipient</th><th style='padding:0 15px 0 15px;'>Total Donation</th></tr>";
           $sql = "select donor, recipient, sum(amount) as total from donations where donor = ? group by recipient";
           $stmt = $pdo->prepare($sql);
           $stmt->execute([$_POST["donor_name"]]);
           while ($row = $stmt->fetch()) {
-            echo "<tr><td>".$row["donor"]."</td><td>".$row["recipient"]."</td><td>".$row["total"]."</td></tr>";
+            echo "<tr><td style='padding:0 15px 0 15px;'>".$row["donor"]."</td><td style='padding:0 15px 0 15px;'>".$row["recipient"]."</td><td style='padding:0 15px 0 15px;'>".$row["total"]."</td></tr>";
           }
         }
       ?>

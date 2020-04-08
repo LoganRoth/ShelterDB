@@ -25,12 +25,12 @@ insert into locations VALUES("Clergy SPCA", "992 Clergy St, Kingston, ON", 80076
 insert into locations VALUES("Division SPCA", "27 Division St, Kingston, ON", 8009982324, "SPCA");
 insert into locations VALUES("No Dog Left Behind", "66 Victoria St, Kingston, ON", 5651119090, "SHELTER");
 insert into locations VALUES("All Rats All Day", "98 University St, Kingston, ON", 9897772222, "SHELTER");
-insert into locations VALUES("It's Raining Cats and Dogs", "120 Bagot St, Kingston, ON", 8882224444, "SHELTER");
+insert into locations VALUES("Its Raining Cats and Dogs", "120 Bagot St, Kingston, ON", 8882224444, "SHELTER");
 
 -- 3 Shelters
 insert into shelters VALUES("No Dog Left Behind", "www.nodogleftbehind.com", "Steve Jobs");
 insert into shelters VALUES("All Rats All Day", "www.allratsallday", "Michael Jordan");
-insert into shelters VALUES("It's Raining Cats and Dogs", " www.rainingcatsanddogs.com", "Jaromir Jagr");
+insert into shelters VALUES("Its Raining Cats and Dogs", " www.rainingcatsanddogs.com", "Jaromir Jagr");
 
 -- 3 Rescue Organizations
 insert into rescue_orgs VALUES("Save The Doggies", "Steve Jobs");
@@ -47,8 +47,8 @@ insert into animal_types VALUES("RABBIT");
 insert into accepted_animals VALUES("No Dog Left Behind", "DOG", 25);
 insert into accepted_animals VALUES("All Rats All Day", "RODENT", 20);
 insert into accepted_animals VALUES("All Rats All Day", "RABBIT", 20);
-insert into accepted_animals VALUES("It's Raining Cats and Dogs", "DOG", 30);
-insert into accepted_animals VALUES("It's Raining Cats and Dogs", "CAT", 30);
+insert into accepted_animals VALUES("Its Raining Cats and Dogs", "DOG", 30);
+insert into accepted_animals VALUES("Its Raining Cats and Dogs", "CAT", 30);
 
 -- 11 Animals
 insert into animals VALUES(1234567890, "DOG", "Clergy SPCA", '2020-01-01');
@@ -56,7 +56,7 @@ insert into animals VALUES(1111111111, "CAT", "Clergy SPCA", '2019-06-04');
 insert into animals VALUES(2222222222, "RODENT", "All Rats All Day", '2020-01-25');
 insert into animals VALUES(3333333333, "RABBIT", "Division SPCA", '2019-08-22');
 insert into animals VALUES(4444444444, "DOG", "Division SPCA", '2018-05-20');
-insert into animals VALUES(5555555555, "CAT", "It's Raining Cats and Dogs", '2020-01-22');
+insert into animals VALUES(5555555555, "CAT", "Its Raining Cats and Dogs", '2020-01-22');
 insert into animals VALUES(6666666666, "DOG", "No Dog Left Behind", '2020-01-10');
 insert into animals VALUES(7777777777, "DOG", "Clergy SPCA", '2019-09-23');
 insert into animals VALUES(8888888888, "RABBIT", "Division SPCA", '2019-06-13');
@@ -71,7 +71,7 @@ insert into drivers VALUES("Chris Scalzitti", 123451234512345, "ZXY-999", "Save 
 -- 6 Employees
 insert into employees VALUES("Steve Jobs", "No Dog Left Behind");
 insert into employees VALUES("Michael Jordan", "All Rats All Day");
-insert into employees VALUES("Jaromir Jagr", "It's Raining Cats and Dogs");
+insert into employees VALUES("Jaromir Jagr", "Its Raining Cats and Dogs");
 insert into employees VALUES("Connor Sparling", "Clergy SPCA");
 insert into employees VALUES("Patrick Lyster", "Division SPCA");
 insert into employees VALUES("Matt Tigwell", "Division SPCA");
@@ -84,14 +84,14 @@ insert into vet_visits VALUES("Robert Moore", 1234567890, '2019-10-10', 700.00, 
 -- 9 Donations
 insert into donations VALUES("Logan Roth", "Save The Doggies", 20.00, '2018-11-28');
 insert into donations VALUES("Logan Roth", "Save The Doggies", 1000.00, '2019-11-28');
-insert into donations VALUES("Anonymous", "It's Raining Cats and Dogs", 100.00, '2020-01-15');
+insert into donations VALUES("Anonymous", "Its Raining Cats and Dogs", 100.00, '2020-01-15');
 insert into donations VALUES("Anonymous", "All Rats All Day", 100.00, '2018-01-15');
 insert into donations VALUES("Anonymous", "Animal Lovers R US", 101.00, '2018-01-15');
 insert into donations VALUES("Anonymous", "Clergy SPCA", 102.00, '2018-01-15');	
 insert into donations VALUES("Anonymous", "Division SPCA", 103.00, '2018-01-15');	
 insert into donations VALUES("Anonymous", "No Dog Left Behind", 104.00, '2018-01-15');	
 insert into donations VALUES("Anonymous", "Pups for You", 105.00, '2018-01-15');
-insert into donations VALUES("Anonymous", "It's Raining Cats and Dogs", 106.00, '2018-01-15');
+insert into donations VALUES("Anonymous", "Its Raining Cats and Dogs", 106.00, '2018-01-15');
 
 
 
@@ -102,5 +102,5 @@ insert into adoptions VALUES(3333333333, "Adopterson", 50.00, '2019-02-03');
 
 -- 3 Transfers
 insert into transfers VALUES(6666666666, "Anthony Scalzitti", 50.00, '2020-01-10', "Clergy SPCA", "No Dog Left Behind");
-insert into transfers VALUES(5555555555, "Maya Moore", 50.00, '2020-01-22', "Division SPCA", "It's Raining Cats and Dogs");
+insert into transfers VALUES(5555555555, "Maya Moore", 50.00, '2020-01-22', "Division SPCA", "Its Raining Cats and Dogs");
 insert into transfers VALUES(2222222222, "Chris Scalzitti", 50.00, '2020-01-25', "Clergy SPCA", "All Rats All Day");
