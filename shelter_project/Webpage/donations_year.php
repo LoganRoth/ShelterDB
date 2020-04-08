@@ -25,30 +25,47 @@
     <div class="container-contact1">
       <h1>Donation Information by Year</h1>
       <div class="blocks">
-      <form action="donor_info.php" method="post">
-        <label for="donor_name">Select a Year:</label>
-        <input type='text' id="year" name="year">
+      <form action="donations_year.php" method="post">
+        <label for="select_year">Input a Year:</label>
+        <input type='text' id="select_year" name="select_year"><br>
+        <select id="organization" name = "organization">
+        <?php
+        $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
+        $sql = "select name from locations";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        if (!empty($_POST["organization"])) {
+          echo "<option value = '".$_POST["organization"]."'>".$_POST["organization"]."</option>";
+        }
+        while ($val = $stmt->fetch()) {
+          if ($val["name"] != $_POST["organization"]){
+            echo "<option value = '".$val["name"]."'>".$val["name"]."</option>";
+          }
+        }
+        ?>
+        </select><br><br>
+        <input type="submit">
       </form>
       </div>
       <?php
-        if (!empty($_POST["donor_name"])) {
-          $pdo = new PDO('mysql:host=localhost;dbname=thicccgirl', "root", "");
-          echo "<table><tr><th>Donor</th><th>Recipient</th><th>Total Donation</th></tr>";
-          $sql = "select donor, recipient, sum(amount) as total from donations where donor = ? group by recipient";
+        if (!empty($_POST["select_year"])) {
+          $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
+          echo "<table><tr><th>Recipient</th><th>Total Donations</th><th>Year</th></tr>";
+          $sql = "select recipient, sum(amount) as amt, year(date_transaction) as year from `donations` where year(date_transaction) = ? and recipient = ? group by recipient";
           $stmt = $pdo->prepare($sql);
-          $stmt->execute([$_POST["donor_name"]]);
+          $stmt->execute([$_POST["select_year"], $_POST["organization"]]);
           while ($row = $stmt->fetch()) {
-            echo "<tr><td>".$row["donor"]."</td><td>".$row["recipient"]."</td><td>".$row["total"]."</td>></tr>";
+            echo "<tr><td>".$row["recipient"]."</td><td>".$row["amt"]."</td><td>".$row["year"]."</td></tr>";
           }
         }
       ?>
 
-      <br></br>
-      <br></br>
+      <br>
+      <br>
       <form action="shelter.html" method="get">
         <button class="contact1-form-btn">
           <span>
-            Home James!
+            Home
           </span>
         </button>
       </form>

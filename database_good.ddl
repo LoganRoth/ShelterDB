@@ -1,4 +1,7 @@
-create table if not exists locations(
+create database if not exists shelter_database;
+
+
+create table if not exists shelter_database.locations(
   name varchar(40) not null,
   address varchar(100) not null,
   phone numeric(10,0) not null,
@@ -6,7 +9,7 @@ create table if not exists locations(
   primary key(name)
 );
 
-create table if not exists shelters(
+create table if not exists shelter_database.shelters(
   name varchar(40) not null,
   website varchar(100) not null,
   owner varchar(40) not null,
@@ -15,7 +18,7 @@ create table if not exists shelters(
   foreign key(owner) references people(name)
 );
 
-create table if not exists rescue_orgs(
+create table if not exists shelter_database.rescue_orgs(
   name varchar(40) not null,
   owner varchar(40) not null,
   primary key(name),
@@ -24,12 +27,12 @@ create table if not exists rescue_orgs(
 );
 
 
-create table if not exists animal_types(
+create table if not exists shelter_database.animal_types(
   type varchar(40) not null,
   primary key(type)
 );
 
-create table if not exists accepted_animals(
+create table if not exists shelter_database.accepted_animals(
   shelter_name varchar(40) not null,
   type varchar(40) not null,
   max_accepted int not null,
@@ -38,7 +41,7 @@ create table if not exists accepted_animals(
   foreign key(type) references animal_types(type)
 );
 
-create table if not exists animals(
+create table if not exists shelter_database.animals(
   uuid numeric(10,0) not null,
   type varchar(40) not null,
   location varchar(40) not null,
@@ -48,7 +51,7 @@ create table if not exists animals(
   foreign key(type) references animal_types(type)
 );
 
-create table if not exists people(
+create table if not exists shelter_database.people(
   name varchar(40) not null,
   phone numeric(10,0),
   address varchar(100),
@@ -56,7 +59,7 @@ create table if not exists people(
   primary key(name)
 );
 
-create table if not exists drivers(
+create table if not exists shelter_database.drivers(
   name varchar(40) not null,
   licence_num numeric(15,0) not null,
   licence_plate varchar(8) not null,
@@ -68,7 +71,7 @@ create table if not exists drivers(
   on update cascade
 );
 
-create table if not exists employees(
+create table if not exists shelter_database.employees(
   name varchar(40) not null,
   workplace varchar(40) not null,
   primary key(name),
@@ -76,7 +79,7 @@ create table if not exists employees(
   foreign key(workplace) references locations(name)
 );
 
-create table if not exists vet_visits(
+create table if not exists shelter_database.vet_visits(
   vet varchar(40) not null,
   animal numeric(10,0) not null,
   visit_date date not null,
@@ -87,7 +90,7 @@ create table if not exists vet_visits(
   foreign key(animal) references animals(uuid)
 );
 
-create table if not exists donations(
+create table if not exists shelter_database.donations(
   donor varchar(40) not null,
   recipient varchar(40) not null,
   amount numeric(10,2) not null,
@@ -97,7 +100,7 @@ create table if not exists donations(
   foreign key(recipient) references locations(name)
 );
 
-create table if not exists adoptions(
+create table if not exists shelter_database.adoptions(
   animal_id numeric(10,0) not null,
   adopter_name varchar(40) not null,
   amount numeric(5,2) not null,
@@ -107,7 +110,7 @@ create table if not exists adoptions(
   foreign key(animal_id) references animals(uuid)
 );
 
-create table if not exists transfers(
+create table if not exists shelter_database.transfers(
   animal_id numeric(10,0) not null,
   driver varchar(40),
   amount_paid numeric(5,2) not null,

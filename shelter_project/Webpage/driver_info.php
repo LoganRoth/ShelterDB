@@ -29,11 +29,11 @@
         <label for="rescue_org">Choose a Rescue Org:</label>
         <select id="rescue_org" name="rescue_org">
         <?php
-        $pdo = new PDO('mysql:host=localhost;dbname=thicccgirl', "root", "");
+        $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
         $sql = "select name from locations where type = 'RESCUE_ORG'";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
-        if (!empty($_POST["spca_name"])) {
+        if (!empty($_POST["rescue_org"])) {
           echo "<option value = '".$_POST["rescue_org"]."'>".$_POST["rescue_org"]."</option>";
         }
         while ($val = $stmt->fetch()) {
@@ -48,7 +48,7 @@
       </div>
       <?php
         if (!empty($_POST["rescue_org"])) {
-          $pdo = new PDO('mysql:host=localhost;dbname=thicccgirl', "root", "");
+          $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
           echo "<table><tr><th>Name</th><th>Phone</th><th>Address</th><th>Licence Number</th><th>Licence Plate</th></tr>";
           $sql = "select people.name, phone, address, licence_num, licence_plate from drivers left outer join people on people.name = drivers.name WHERE workplace = ?";
           $stmt = $pdo->prepare($sql);
@@ -58,8 +58,9 @@
           }
         }
         ?>
-      <br></br>
-      <br></br>
+
+      <br>
+      <br>
       <form action="shelter.html" method="get">
         <button class="contact1-form-btn">
             <span>

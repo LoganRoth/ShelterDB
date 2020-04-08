@@ -20,7 +20,7 @@ insert into people VALUES("Adopterson", 6672367837, "67 Adoption St, Kingston, O
 -- 9 Locations
 insert into locations VALUES("Save The Doggies", "72 James St, Kingston, ON", 8002672001, "RESCUE_ORG");
 insert into locations VALUES("Pups for You", "688 Street St, Kingston, ON", 9098087227, "RESCUE_ORG");
-insert into locations VALUES("Animal Lovers R' US", "334 Avenue St, Kingston, ON", 8234567112, "RESCUE_ORG");
+insert into locations VALUES("Animal Lovers R US", "334 Avenue St, Kingston, ON", 8234567112, "RESCUE_ORG");
 insert into locations VALUES("Clergy SPCA", "992 Clergy St, Kingston, ON", 8007670011, "SPCA");
 insert into locations VALUES("Division SPCA", "27 Division St, Kingston, ON", 8009982324, "SPCA");
 insert into locations VALUES("No Dog Left Behind", "66 Victoria St, Kingston, ON", 5651119090, "SHELTER");
@@ -35,7 +35,7 @@ insert into shelters VALUES("It's Raining Cats and Dogs", " www.rainingcatsanddo
 -- 3 Rescue Organizations
 insert into rescue_orgs VALUES("Save The Doggies", "Steve Jobs");
 insert into rescue_orgs VALUES("Pups for You", "Steve Jobs");
-insert into rescue_orgs VALUES("Animal Lovers R' US", "Steve Jobs");
+insert into rescue_orgs VALUES("Animal Lovers R US", "Steve Jobs");
 
 -- 4 Types of Animals
 insert into animal_types VALUES("DOG");

@@ -23,13 +23,13 @@
 <body>
   <div class="contact1">
     <div class="container-contact1">
-      <h1>Browse All animals</h1>
+      <h1>Browse All Animals</h1>
       <div class="blocks">
       <form action="browse_animals.php" method="post">
         <label for="spca_name">Choose a SPCA:</label>
         <select id="spca_name" name="spca_name">
         <?php
-        $pdo = new PDO('mysql:host=localhost;dbname=thicccgirl', "root", "");
+        $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
         $sql = "select name from locations where type = 'SPCA'";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
@@ -48,7 +48,7 @@
       </div>
       <?php
         if (!empty($_POST["spca_name"])) {
-          $pdo = new PDO('mysql:host=localhost;dbname=thicccgirl', "root", "");
+          $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
           echo "<table><tr><th>UUID</th><th>Name</th><th>Type</th><th>Arrival Date</th></tr>";
           $sql = "select uuid, location, type, arrival_date from animals where location = ?";
           $stmt = $pdo->prepare($sql);
@@ -58,8 +58,9 @@
           }
         }
         ?>
-      <br></br>
-      <br></br>
+
+      <br>
+      <br>
       <form action="shelter.html" method="get">
         <button class="contact1-form-btn">
             <span>

@@ -29,7 +29,7 @@
         <label for="donor_name">Select a donor:</label>
         <select id="donor_name" name="donor_name">
         <?php
-        $pdo = new PDO('mysql:host=localhost;dbname=thicccgirl', "root", "");
+        $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
         $sql = "select distinct donor from donations";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
@@ -48,23 +48,23 @@
       </div>
       <?php
         if (!empty($_POST["donor_name"])) {
-          $pdo = new PDO('mysql:host=localhost;dbname=thicccgirl', "root", "");
+          $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
           echo "<table><tr><th>Donor</th><th>Recipient</th><th>Total Donation</th></tr>";
           $sql = "select donor, recipient, sum(amount) as total from donations where donor = ? group by recipient";
           $stmt = $pdo->prepare($sql);
           $stmt->execute([$_POST["donor_name"]]);
           while ($row = $stmt->fetch()) {
-            echo "<tr><td>".$row["donor"]."</td><td>".$row["recipient"]."</td><td>".$row["total"]."</td>></tr>";
+            echo "<tr><td>".$row["donor"]."</td><td>".$row["recipient"]."</td><td>".$row["total"]."</td></tr>";
           }
         }
       ?>
 
-      <br></br>
-      <br></br>
+      <br>
+      <br>
       <form action="shelter.html" method="get">
         <button class="contact1-form-btn">
           <span>
-            Home James!
+            Home
           </span>
         </button>
       </form>
