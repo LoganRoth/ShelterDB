@@ -83,7 +83,7 @@ create table if not exists shelter_database.vet_visits(
   vet varchar(40) not null,
   animal numeric(10,0) not null,
   visit_date date not null,
-  weight numeric(4,2),
+  weight numeric(5,2),
   reason varchar(200),
   primary key(vet, animal, visit_date),
   foreign key(vet) references people(name),

@@ -49,12 +49,12 @@
       <?php
         if (!empty($_POST["rescue_org"])) {
           $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
-          echo "<table><tr><th>Name</th><th>Phone</th><th>Address</th><th>Licence Number</th><th>Licence Plate</th></tr>";
+          echo "<table><tr><th style='padding:0 15px 0 15px;'>Name</th><th style='padding:0 15px 0 15px;'>Phone</th><th style='padding:0 15px 0 15px;'>Address</th><th style='padding:0 15px 0 15px;'>Licence Number</th><th style='padding:0 15px 0 15px;'>Licence Plate</th></tr>";
           $sql = "select people.name, phone, address, licence_num, licence_plate from drivers left outer join people on people.name = drivers.name WHERE workplace = ?";
           $stmt = $pdo->prepare($sql);
           $stmt->execute([$_POST["rescue_org"]]);
           while ($row = $stmt->fetch()) {
-            echo "<tr><td>".$row["name"]."</td><td>".$row["phone"]."</td><td>".$row["address"]."</td><td>".$row["licence_num"]."</td><td>".$row["licence_plate"]."</td></tr>";
+            echo "<tr><td style='padding:0 15px 0 15px;'>".$row["name"]."</td><td style='padding:0 15px 0 15px;'>".$row["phone"]."</td><td style='padding:0 15px 0 15px;'>".$row["address"]."</td><td style='padding:0 15px 0 15px;'>".$row["licence_num"]."</td><td style='padding:0 15px 0 15px;'>".$row["licence_plate"]."</td></tr>";
           }
         }
         ?>

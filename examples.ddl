@@ -64,8 +64,8 @@ insert into animals VALUES(9999999999, "DOG", "Division SPCA", '2018-11-29');
 insert into animals VALUES(1234512345, "CAT", "Division SPCA", '2019-12-15');
 
 -- 3 Drivers
-insert into drivers VALUES("Maya Moore", 123456789012345, "BBB-1234", "Save The Doggies");
-insert into drivers VALUES("Anthony Scalzitti", 999998888877777, "ABC-1234", "Save The Doggies");
+insert into drivers VALUES("Maya Moore", 123456789012345, "BBB-1234", "Pups for You");
+insert into drivers VALUES("Anthony Scalzitti", 999998888877777, "ABC-1234", "Animal Lovers R US");
 insert into drivers VALUES("Chris Scalzitti", 123451234512345, "ZXY-999", "Save The Doggies");
 
 -- 6 Employees
@@ -81,10 +81,19 @@ insert into vet_visits VALUES("Robert Moore", 1234567890, '2018-10-10', 500.50, 
 insert into vet_visits VALUES("Robert Moore", 1234567890, '2019-06-15', 600.50, "More overweight");
 insert into vet_visits VALUES("Robert Moore", 1234567890, '2019-10-10', 700.00, "Even more overweight");
 
--- 3 Donations
+-- 9 Donations
 insert into donations VALUES("Logan Roth", "Save The Doggies", 20.00, '2018-11-28');
 insert into donations VALUES("Logan Roth", "Save The Doggies", 1000.00, '2019-11-28');
 insert into donations VALUES("Anonymous", "It's Raining Cats and Dogs", 100.00, '2020-01-15');
+insert into donations VALUES("Anonymous", "All Rats All Day", 100.00, '2018-01-15');
+insert into donations VALUES("Anonymous", "Animal Lovers R US", 101.00, '2018-01-15');
+insert into donations VALUES("Anonymous", "Clergy SPCA", 102.00, '2018-01-15');	
+insert into donations VALUES("Anonymous", "Division SPCA", 103.00, '2018-01-15');	
+insert into donations VALUES("Anonymous", "No Dog Left Behind", 104.00, '2018-01-15');	
+insert into donations VALUES("Anonymous", "Pups for You", 105.00, '2018-01-15');
+insert into donations VALUES("Anonymous", "It's Raining Cats and Dogs", 106.00, '2018-01-15');
+
+
 
 -- 3 Adoptions
 insert into adoptions VALUES(4444444444, "Adopterson", 50.00, '2020-01-01');

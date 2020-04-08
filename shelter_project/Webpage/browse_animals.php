@@ -49,12 +49,12 @@
       <?php
         if (!empty($_POST["spca_name"])) {
           $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
-          echo "<table><tr><th>UUID</th><th>Name</th><th>Type</th><th>Arrival Date</th></tr>";
+          echo "<table><tr><th style='padding:0 15px 0 15px;'>UUID</th><th style='padding:0 15px 0 15px;'>Name</th><th style='padding:0 15px 0 15px;'>Type</th><th style='padding:0 15px 0 15px;'>Arrival Date</th></tr>";
           $sql = "select uuid, location, type, arrival_date from animals where location = ?";
           $stmt = $pdo->prepare($sql);
           $stmt->execute([$_POST["spca_name"]]);
           while ($row = $stmt->fetch()) {
-            echo "<tr><td>".$row["uuid"]."</td><td>".$row["location"]."</td><td>".$row["type"]."</td><td>".$row["arrival_date"]."</td></tr>";
+            echo "<tr><td style='padding:0 15px 0 15px;'>".$row["uuid"]."</td><td style='padding:0 15px 0 15px;'>".$row["location"]."</td><td style='padding:0 15px 0 15px;'>".$row["type"]."</td><td style='padding:0 15px 0 15px;'>".$row["arrival_date"]."</td></tr>";
           }
         }
         ?>

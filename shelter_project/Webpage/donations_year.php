@@ -27,7 +27,7 @@
       <div class="blocks">
       <form action="donations_year.php" method="post">
         <label for="select_year">Input a Year:</label>
-        <input type='text' id="select_year" name="select_year"><br>
+        <input type='text' id="select_year" name="select_year" value=2018><br>
         <select id="organization" name = "organization">
         <?php
         $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
@@ -50,16 +50,15 @@
       <?php
         if (!empty($_POST["select_year"])) {
           $pdo = new PDO('mysql:host=localhost;dbname=shelter_database', "root", "");
-          echo "<table><tr><th>Recipient</th><th>Total Donations</th><th>Year</th></tr>";
+          echo "<table><tr><th style='padding:0 15px 0 15px;'>Recipient</th><th style='padding:0 15px 0 15px;'>Total Donations</th><th style='padding:0 15px 0 15px;'>Year</th></tr>";
           $sql = "select recipient, sum(amount) as amt, year(date_transaction) as year from `donations` where year(date_transaction) = ? and recipient = ? group by recipient";
           $stmt = $pdo->prepare($sql);
           $stmt->execute([$_POST["select_year"], $_POST["organization"]]);
           while ($row = $stmt->fetch()) {
-            echo "<tr><td>".$row["recipient"]."</td><td>".$row["amt"]."</td><td>".$row["year"]."</td></tr>";
+            echo "<tr><td style='padding:0 15px 0 15px;'>".$row["recipient"]."</td><td style='padding:0 15px 0 15px;''>".$row["amt"]."</td><td style='padding:0 15px 0 15px;'td>".$row["year"]."</td></tr>";
           }
         }
       ?>
-
       <br>
       <br>
       <form action="shelter.html" method="get">
